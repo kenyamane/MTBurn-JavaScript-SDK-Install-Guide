@@ -209,7 +209,7 @@ These options below are capable to be assigned.
 |---|---|---|---|
 | title_length | Assign the maximum length of title | `5` | `This is title` -> `This...`|
 | description_length | Assign the maximum length of description | `10` | `This is description` -> `This is des...`|  
-| displayed_advertiser_length | Assign the maximum length of advertiser's name | `5` | `Provided by test advertiser` -> `Test ad… |
+| displayed_advertiser_length | Assign the maximum length of advertiser's name（The number less than 10 is disabled） | `11` | `Provided by test advertiser` -> `Provided b…`
 
 ### Editing by callback functions
 
@@ -527,3 +527,4 @@ It creates `MTBADVS` argument just beneath `window` object. Use `MTBADVS` argume
 ## What is meaning of `Instream` in codes?
 
 It has same role as `In-Feed` in the guide.
+
