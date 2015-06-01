@@ -209,7 +209,7 @@ These options below are capable to be assigned.
 |---|---|---|---|
 | title_length | Assign the maximum length of title | `5` | `This is title` -> `This...`|
 | description_length | Assign the maximum length of description | `10` | `This is description` -> `This is des...`|  
-| displayed_advertiser_length | Assign the maximum length of advertiser's name（The number less than 10 is disabled） | `11` | `Provided by test advertiser` -> `Test advertiser inc. …`
+| displayed_advertiser_length | Assign the maximum length of advertiser's name（The number less than 10 is disabled） | `11` | `Provided by test advertiser` -> `Provided b…`
 
 ### Editing by callback functions
 
