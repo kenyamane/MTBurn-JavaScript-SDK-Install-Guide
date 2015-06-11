@@ -138,7 +138,7 @@ Please refer [here](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guid
 On the UI of WordPress, you can see the section named “plug in(Ads>Create new)” on the left side then click on that section and paste the following code then and import.
 
 ```html
-<script type="text/advs-instream-template" data-adspot-id="広告枠ID">
+<script type="text/advs-instream-template" data-adspot-id="ad spot ID">
 <!-- Paste the template that make in above section -->
 </script>
 <script src="//js.mtburn.com/advs-instream.js"></script>
