@@ -27,7 +27,7 @@ General ways are as followings;。
 - Might find out ”Advertising Manager” by Scott Switzer
 - Click “now install” button then the installation finished.
 
-![インストール方法その1](Install_SDK_Guide_Images/install1.png)
+![インストール方法その1](Install_SDK_Guide_Images/en/1.png)
 
 ### B)How to select the plug-in zip file and install
 
