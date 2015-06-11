@@ -1,89 +1,93 @@
-# 目次
-- [WordPressプラグイン「Advertising Manager」のインストール](#install)
-  - [「Advertising Manager」をインストールする](#install1)
-  - [「Advertising Manager」を有効にする](#install2)
-- [「Advertising Manager」の設定](#setup)
-  - [テーマの編集](#setup1)
-    - [テンプレートへのコードの追加](#setup1-1)
-  - [「Adveritising Manager」の広告枠設定](#setup2)
-    - [広告テンプレートと呼出用タグの設定](#setup2-1)
-    - [広告設置位置指定タグの設定](#setup2-2)
+# Index
+- [Step1:Install “Advertising Manager” which is WordPress plugin](#install)
+  - [1)Install "Advertising Manager"](#install1)
+  - [2)Activate "Advertising Manager"](#install2)
+- [Step2:Set up “Advertising Manager”](#setup)
+  - [1)Edit theme](#setup1)
+    - [Add code on template](#setup1-1)
+  - [2)Ad spot setting on “Advertising Manager”](#setup2)
+    - [Set ad template and ad call script](#setup2-1)
+    - [Set up the tag which assign ad placement](#setup2-2)
 
 
-WordPress にプラグインを用いてインフィード広告を導入する方法を説明します。
+This socument show how to implement tag on WordPress using plug-in.
 
 
 <a name="install"></a>
-# WordPressプラグイン「Advertising Manager」のインストール
+# Step 1 : Install “Advertising Manager” which is WordPress plugin
 
 <a name="install1"></a>
-## 「Advertising Manager」をインストールする
+## 1)Install "Advertising Manager"
 
-一般的なやり方は下記の3通りになります。
+General ways are as followings;。
 
-### WordPress管理画面上でプラグイン検索してインストールする方法
+### A)How to search the plugin on UI and install
 
-- WordPress管理画面の「プラグイン＞新規追加」で「advertising-manager」を検索する
-- Scott Switzer作の「Advertising Manager」を「いますぐインストール」でインストールする
+- On the UI of WordPress, you can see the section named “Plugins>Add new” on the left side, then click on that section and Search for ”advertising-manager”
+- Might find out ”Advertising Manager” by Scott Switzer
+- Click “now install” button then the installation finished.
 
 ![インストール方法その1](Install_SDK_Guide_Images/install1.png)
 
-### プラグインのZIPファイルを指定してインストールする方法
+### B)How to select the plug-in zip file and install
 
-- [WordPressプラグイン「Advertising Manager」](https://wordpress.org/plugins/advertising-manager/)からプラグインのZIPファイルをダウンロードする
-- WordPress管理画面の「プラグイン＞新規追加」で「プラグインのアップロード」を選択する
-- プラグインのZIPファイルを指定して「いますぐインストール」でインストールする
+- Download the plugin zip file from [WordPress plugin「Advertising Manager」](https://wordpress.org/plugins/advertising-manager/)
+- On the UI of WordPress, you can see the section named ”Appearance>Edit” on the left side then, click on that section and select “upload plugin”.
+- Select the zip file, click button “Install now”
+
 
 ![インストール方法その2](Install_SDK_Guide_Images/install2.png)
 
-### サーバに直接アップする方法
+### C)How to upload plug-in directly on server
 
-- [WordPressプラグイン「Advertising Manager」](https://wordpress.org/plugins/advertising-manager/)からプラグインのZIPファイルをダウンロードする
-- ZIPファイルを WordPressがインストールされているディレクトリの `wp-contents/plugins`ディレクトリにアップする
-- ZIPファイルを解凍する
+- •	Download the plugin zip file from [WordPressplug-in「Advertising Manager」](https://wordpress.org/plugins/advertising-manager/).
+- Upload the zip file on the “wp-contents/plugins” directory “wp-contents/plugins” which is installed via Wordpress
+- Extract the zip file
+
 
 ![インストール方法その3](Install_SDK_Guide_Images/install3.png)
 
 
 <a name="install2"></a>
-## 「Advertising Manager」を有効にする
+## 2)Activate ”Advertising Manager”
 
-WordPress管理画面の「プラグイン＞インストール済みプラグイン」で「宣伝マネージャ」(Advertising Manager)を「有効」にしてください。
+On the UI of WordPress, you can see the section named ”Plugins>Installed plugins” on the left side then click on that section and activate “Advertising Manager”.
 
 ![有効化](Install_SDK_Guide_Images/activate.png)
 
 
 <a name="setup"></a>
-# 「Advertising Manager」の設定
+# Step 2: Set up “Advertising Manager”
 
 <a name="setup1"></a>
-## テーマの編集
+## 1)　Edit theme
 
-テーマを編集し、広告を表示させたいフィード部分にコードを追加します。
+Add the code where you would like to make new ad spot by editing the theme.
 
-例として、WordPressインストール初期状態のフィード一覧ページのテンプレートは以下の 3 つです。
+Ex) After installation, many templates are shown on feed list at the initial stage. In this case, there are 3 templates as per belowl。
 
-- メインインデックステンプレート (``index.php``)
-- 検索結果テンプレート (``search.php``)
-- アーカイブテンプレート (``archive.php``)
+- Main index template (index.php)
+- Search template (search.php)
+- Archive template (archive.php)
+
 
 ![テンプレート](Install_SDK_Guide_Images/template1.png)
 
 
 <a name="setup1-1"></a>
-### テンプレートへのコードの追加
+### Add code on template
 
-- WordPress管理画面の「外観＞テーマの編集」で、編集するテンプレート(``index.php``や``search.php``、``archive.php`` など)を選択してください
-- 下記を参考に 2 行のコードを追加してください
-  - ループの終了直前の行に以下のコードを追加してください
+- On the UI of WordPress, you can see the section named”Appearance>Edit” on the left side then click on that section and select the template that you would like to edit(``index.php``or``search.php``、``archive.php`` etc...)
+- Add 2 code per details below
+  - Add the following code on the line just before the end of the loop
     - `advman_ad('ADVS_xxx-' . (is_null($advs_xxx) ? ($advs_xxx = 1) : ++$advs_xxx));`
-      - `xxx` は内容に応じた任意の名前をつけてください。例えば index ページならば `ADVS_index` など
-      - `xxx` には半角英数字のみ使用できます
-  - ループ終了後の行に以下のコードを追加してください
+      - `xxx` : Set optional name depend on contents. Ex)index page => `ADVS_index`
+      - Can use Alphanumeric only for `xxx`
+  - Add following code on the line after loop termination
     - `advman_ad('ADVS_xxx');`
-- 「ファイルを更新」を押してテンプレートの編集を終了してください
+- Press “Update File” button  then finish to edit editing template
 
-`index` のテンプレートにコードを追加する例
+ Sample：Adding the code on `index` template
 
 ```php
 	// Start the Loop.
@@ -96,27 +100,27 @@ WordPress管理画面の「プラグイン＞インストール済みプラグ�
 		 */
 		get_template_part( 'content', get_post_format() );
 
-		advman_ad('ADVS_index-' . (is_null($advs_index) ? ($advs_index = 1) : ++$advs_index));	// ←この行を追加。
+		advman_ad('ADVS_index-' . (is_null($advs_index) ? ($advs_index = 1) : ++$advs_index));	// ←Add this code.
 
 	// End the loop.
 	endwhile;
-	advman_ad('ADVS_index');													// ←この行を追加
+	advman_ad('ADVS_index');													// ←Add this code.
 ```
 
 ![テンプレートの編集](Install_SDK_Guide_Images/template2.png)
 
 
 <a name="setup2"></a>
-## 「Adveritising Manager」の広告枠設定
+## 2) Ad spot setting on “Advertising Manager”
 
 <a name="setup2-1"></a>
-### 広告テンプレートと呼出用タグの設定
+### Set ad template and ad call script
 
-#### テンプレート用タグの準備
+#### Create tag for template
 
-広告枠のテンプレート用タグを準備してください。媒体様ごとに異なるテンプレートが必要です。詳しくは [こちら](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide.md#user-content-%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AE%E8%A8%98%E8%BF%B0) を参照ください。
+Create tag for template. It is necessary to make different templates on each media. Please refer [here](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide_English.md#infeed/start/template) for the access of further details.  
 
-テンプレート用タグの例
+Sample: Tag for template
 
 ```html
 <div class="article">
@@ -131,15 +135,15 @@ WordPress管理画面の「プラグイン＞インストール済みプラグ�
 </div>
 ```
 
-テンプレート内で使うことができるパラメータは [こちら](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide.md#user-content-%E5%BA%83%E5%91%8A%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF) を参照ください。
+Please refer [here](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide_English.md#infeed/parameter) to know which placeholders you can use. 
 
-#### テンプレート用タグと呼出用タグの入稿
+#### Draft ad template tag and ad call script
 
-WordPress管理画面の「広告＞新規作成」で、下記のコードを貼り付けて「インポート」してください。
+On the UI of WordPress, you can see the section named “plug in(Ads>Create new)” on the left side then click on that section and paste the following code then and import.
 
 ```html
 <script type="text/advs-instream-template" data-adspot-id="広告枠ID">
-<!-- ここに先ほど準備した広告テンプレートを貼り付けてください -->
+<!-- Paste the template that make in above section -->
 </script>
 <script src="//js.mtburn.com/advs-instream.js"></script>
 <script>MTBADVS.InStream.Default.run();</script>
@@ -147,45 +151,45 @@ WordPress管理画面の「広告＞新規作成」で、下記のコードを�
 
 ![広告設定1](Install_SDK_Guide_Images/ad_setup1.png)
 
-- `ここに先ほど準備した広告テンプレートを貼り付けてください` 部分に、さきほど準備いただいた広告テンプレートを貼り付けてください。また広告を表示する際の文字数などは、この時点での設定が必要です。詳しくは [こちら](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide.md#user-content-%E5%BA%83%E5%91%8A%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E8%AA%AC%E6%98%8E%E6%96%87%E3%81%AE%E7%9F%AD%E7%B8%AE) を参照ください。
-- `広告枠ID` の部分には、管理画面で発行した広告枠 ID を入力してください。
+- Paste the template in above section on the area `“Paste the template that make in above section”`. When you would like to assign number of text, need to set in this point. Please refer [here](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide_English.md) to know more detail.
+- Set ad spot ID that registered on admin UI on `ad spot ID`.
 ![広告枠ID](Install_SDK_Guide_Images/adspot_id.png)
 
-インポート後、「HTML広告の設定を編集」画面になります。
+After import, move"Edit Settings for HTML Ad"
 
-- `HTML` を `ADVS_xxx` に変更してください
-  - `xxx` の部分は [テーマの編集](#setup1) で決めた名前に変更してください。今回の例では `ADVS_index` となります
-- 「アカウント詳細＞Max Ads Per Page」を「1」に変更してください
-- 「保存」を押して登録を完了してください
+- Change `HTML` to `ADVS_xxx` 
+  - Change `xxx` to [previousinput name](#setup1). For the current example name is `ADVS_index`.
+- Fill in “1” on the box ” Account Details > Max Ads Per Page”
+- Click  “save” button and the registration completed.
 
 ![広告設定2](Install_SDK_Guide_Images/ad_setup2.png)
 
 
 <a name="setup2-2"></a>
-### 広告設置位置指定タグの設定
+### Set up the tag which assign ad placement
 
-WordPress管理画面の「広告＞新規作成」で、下記のコードを貼り付けて「インポート」してください。
+On the UI of WordPress, you can see the section named “plug in(Ads>Create new)” on the left side then click on that section and paste the following code then and import. 
 
 ```html
-<div data-advs-adspot-id="広告枠ID" style="display:none"></div>
+<div data-advs-adspot-id="ad spot ID" style="display:none"></div>
 ```
 
 ![広告設定2](Install_SDK_Guide_Images/infeed1.png)
 
-- `広告枠ID` の部分には、広告テンプレート用タグと同様の、管理画面で発行した広告枠 ID を入力してください。
+-Enter the ID that registered on admin UI on `ad spot ID` which is the same ID with ad template’s.。
 
-インポート後、「HTML広告の設定を編集」画面になります。
+After import, move"Edit Settings for HTML Ad"。
 
-- `HTML` を `ADVS_xxx-<表示位置>` に変更してください。
-  - `xxx` の部分は [テーマの編集](#setup1) で決めた名前に変更してください。今回の例では `ADVS_index` となります
-  - `<表示位置>` には整数を入れてください。設定した数値の次のフィードにインフィード広告が表示されます
-- 「保存」を押して登録を完了してください
+- Change `HTML` to `ADVS_xxx-<ad display position>` 
+  - Change `xxx` to [previous input name](#setup1). The current sample name is `ADVS_index`.
+  - Enter only the integer on `<ad display position>`. Note that the ads will be automatically displayed in the next below section
+- Click “save” button and the registration completed
 
 ![広告設定2](Install_SDK_Guide_Images/infeed2.png)
 
-同じフィード内にさらに広告を設置する場合は、[広告設置位置指定タグの設定](#setup2-2) を必要個数分実行してください。
+In case you would like to create more ad spots, please repeat the same instructions and procedures [Set up the tag which assign ad placement](#setup2-2) again.
 
 
-**これで設定は完了です。**
+**Setting is completed.**
 
-変更したテンプレートの画面で、インフィード広告が表示されるかご確認ください。
+Check if infeed ad displayed on template section.
