@@ -36,16 +36,12 @@ General ways are as followings;。
 - Select the zip file, click button “Install now”
 
 
-![インストール方法その2](Install_SDK_Guide_Images/en/2.png)
-
 ### C)How to upload plug-in directly on server
 
 - •	Download the plugin zip file from [WordPressplug-in「Advertising Manager」](https://wordpress.org/plugins/advertising-manager/).
 - Upload the zip file on the “wp-contents/plugins” directory “wp-contents/plugins” which is installed via Wordpress
 - Extract the zip file
 
-
-![インストール方法その3](Install_SDK_Guide_Images/install3.png)
 
 
 <a name="install2"></a>
