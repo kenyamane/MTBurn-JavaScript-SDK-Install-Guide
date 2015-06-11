@@ -1,13 +1,13 @@
-# 目次
-- [WordPressプラグイン「Advertising Manager」のインストール](#install)
-  - [「Advertising Manager」をインストールする](#install1)
-  - [「Advertising Manager」を有効にする](#install2)
-- [「Advertising Manager」の設定](#setup)
-  - [テーマの編集](#setup1)
-    - [テンプレートへのコードの追加](#setup1-1)
-  - [「Adveritising Manager」の広告枠設定](#setup2)
-    - [広告テンプレートと呼出用タグの設定](#setup2-1)
-    - [広告設置位置指定タグの設定](#setup2-2)
+# Index
+- [Install “Advertising Manager” which is WordPress plugin](#install)
+  - [Install "Advertising Manager"](#install1)
+  - [Activate "Advertising Manager"](#install2)
+- [Set up “Advertising Manager”](#setup)
+  - [Edit theme](#setup1)
+    - [Add code on template](#setup1-1)
+  - [Ad spot setting on “Advertising Manager”](#setup2)
+    - [Set ad template and ad call script](#setup2-1)
+    - [Set up the tag which assign ad placement](#setup2-2)
 
 
 This socument show how to implement tag on WordPress using plug-in.
