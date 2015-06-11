@@ -1,11 +1,11 @@
 # Index
 - [Step1:Install “Advertising Manager” which is WordPress plugin](#install)
-  - [Install "Advertising Manager"](#install1)
-  - [Activate "Advertising Manager"](#install2)
+  - [1)Install "Advertising Manager"](#install1)
+  - [2)Activate "Advertising Manager"](#install2)
 - [Step2:Set up “Advertising Manager”](#setup)
-  - [Edit theme](#setup1)
+  - [1)Edit theme](#setup1)
     - [Add code on template](#setup1-1)
-  - [Ad spot setting on “Advertising Manager”](#setup2)
+  - [2)Ad spot setting on “Advertising Manager”](#setup2)
     - [Set ad template and ad call script](#setup2-1)
     - [Set up the tag which assign ad placement](#setup2-2)
 
@@ -17,7 +17,7 @@ This socument show how to implement tag on WordPress using plug-in.
 # Step 1 : Install “Advertising Manager” which is WordPress plugin
 
 <a name="install1"></a>
-## Install "Advertising Manager"
+## 1)Install "Advertising Manager"
 
 General ways are as followings;。
 
@@ -49,7 +49,7 @@ General ways are as followings;。
 
 
 <a name="install2"></a>
-## Activate ”Advertising Manager”
+## 2)Activate ”Advertising Manager”
 
 On the UI of WordPress, you can see the section named ”Plugins>Installed plugins” on the left side then click on that section and activate “Advertising Manager”.
 
