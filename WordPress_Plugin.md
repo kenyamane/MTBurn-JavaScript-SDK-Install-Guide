@@ -1,8 +1,8 @@
 # Index
-- [Install “Advertising Manager” which is WordPress plugin](#install)
+- [Step1:Install “Advertising Manager” which is WordPress plugin](#install)
   - [Install "Advertising Manager"](#install1)
   - [Activate "Advertising Manager"](#install2)
-- [Set up “Advertising Manager”](#setup)
+- [Step2:Set up “Advertising Manager”](#setup)
   - [Edit theme](#setup1)
     - [Add code on template](#setup1-1)
   - [Ad spot setting on “Advertising Manager”](#setup2)
@@ -49,7 +49,7 @@ General ways are as followings;。
 
 
 <a name="install2"></a>
-## Step 2: Activate ”Advertising Manager”
+## Activate ”Advertising Manager”
 
 On the UI of WordPress, you can see the section named ”Plugins>Installed plugins” on the left side then click on that section and activate “Advertising Manager”.
 
@@ -57,7 +57,7 @@ On the UI of WordPress, you can see the section named ”Plugins>Installed plugi
 
 
 <a name="setup"></a>
-# Step 3: Set up “Advertising Manager”
+# Step 2: Set up “Advertising Manager”
 
 <a name="setup1"></a>
 ## 1)　Edit theme
