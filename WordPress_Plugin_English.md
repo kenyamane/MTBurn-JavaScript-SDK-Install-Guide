@@ -27,7 +27,7 @@ General ways are as followings;。
 - Might find out ”Advertising Manager” by Scott Switzer
 - Click “now install” button then the installation finished.
 
-![インストール方法その1](Install_SDK_Guide_Images/en/1.png)
+![インストール方法その1](Install_SDK_Guide_Images/en/install1.png)
 
 ### B)How to select the plug-in zip file and install
 
@@ -49,7 +49,7 @@ General ways are as followings;。
 
 On the UI of WordPress, you can see the section named ”Plugins>Installed plugins” on the left side then click on that section and activate “Advertising Manager”.
 
-![有効化](Install_SDK_Guide_Images/en/2.png)
+![有効化](Install_SDK_Guide_Images/en/activate.png)
 
 
 <a name="setup"></a>
@@ -67,7 +67,7 @@ Ex) After installation, many templates are shown on feed list at the initial sta
 - Archive template (archive.php)
 
 
-![テンプレート](Install_SDK_Guide_Images/en/3.png)
+![テンプレート](Install_SDK_Guide_Images/en/template1.png)
 
 
 <a name="setup1-1"></a>
@@ -103,7 +103,7 @@ Ex) After installation, many templates are shown on feed list at the initial sta
 	advman_ad('ADVS_index');													// ←Add this code.
 ```
 
-![テンプレートの編集](Install_SDK_Guide_Images/en/4.png)
+![テンプレートの編集](Install_SDK_Guide_Images/en/tempate2.png)
 
 
 <a name="setup2"></a>
@@ -145,11 +145,11 @@ On the UI of WordPress, you can see the section named “plug in(Ads>Create new)
 <script>MTBADVS.InStream.Default.run();</script>
 ```
 
-![広告設定1](Install_SDK_Guide_Images/en/5.png)
+![広告設定1](Install_SDK_Guide_Images/en/ad_setup1.png)
 
 - Paste the template in above section on the area `“Paste the template that make in above section”`. When you would like to assign number of text, need to set in this point. Please refer [here](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide_English.md) to know more detail.
 - Set ad spot ID that registered on admin UI on `ad spot ID`.
-![広告枠ID](Install_SDK_Guide_Images/en/6.png)
+![広告枠ID](Install_SDK_Guide_Images/en/adspot_id.png)
 
 After import, move"Edit Settings for HTML Ad"
 
@@ -158,7 +158,7 @@ After import, move"Edit Settings for HTML Ad"
 - Fill in “1” on the box ” Account Details > Max Ads Per Page”
 - Click  “save” button and the registration completed.
 
-![広告設定2](Install_SDK_Guide_Images/en/7.png)
+![広告設定2](Install_SDK_Guide_Images/en/ad_setup2.png)
 
 
 <a name="setup2-2"></a>
@@ -170,7 +170,7 @@ On the UI of WordPress, you can see the section named “plug in(Ads>Create new)
 <div data-advs-adspot-id="ad spot ID" style="display:none"></div>
 ```
 
-![広告設定2](Install_SDK_Guide_Images/en/8.png)
+![広告設定2](Install_SDK_Guide_Images/en/infeed1.png)
 
 -Enter the ID that registered on admin UI on `ad spot ID` which is the same ID with ad template’s.。
 
@@ -181,7 +181,7 @@ After import, move"Edit Settings for HTML Ad"。
   - Enter only the integer on `<ad display position>`. Note that the ads will be automatically displayed in the next below section
 - Click “save” button and the registration completed
 
-![広告設定2](Install_SDK_Guide_Images/en/9.png)
+![広告設定2](Install_SDK_Guide_Images/en/infeed2.png)
 
 In case you would like to create more ad spots, please repeat the same instructions and procedures [Set up the tag which assign ad placement](#setup2-2) again.
 
