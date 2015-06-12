@@ -10,7 +10,7 @@
     - [Set up the tag which assign ad placement](#setup2-2)
 
 
-This socument show how to implement tag on WordPress using plug-in.
+This socument show how to implement tag on WordPress using plugin.
 
 
 <a name="install"></a>
@@ -19,7 +19,7 @@ This socument show how to implement tag on WordPress using plug-in.
 <a name="install1"></a>
 ## 1)Install "Advertising Manager"
 
-General ways are as followings;。
+General ways are as followings;
 
 ### A)How to search the plugin on UI and install
 
@@ -29,14 +29,14 @@ General ways are as followings;。
 
 ![インストール方法その1](Install_SDK_Guide_Images/en/install1.png)
 
-### B)How to select the plug-in zip file and install
+### B)How to select the plugin zip file and install
 
 - Download the plugin zip file from [WordPress plugin「Advertising Manager」](https://wordpress.org/plugins/advertising-manager/)
-- On the UI of WordPress, you can see the section named ”Appearance>Edit” on the left side then, click on that section and select “upload plugin”.
+- On the UI of WordPress, you can see the section named ”Appearance>Edit” on the left side then, click on that section and select “Upload plugin”.
 - Select the zip file, click button “Install now”
 
 
-### C)How to upload plug-in directly on server
+### C)How to upload plugin directly on server
 
 - •	Download the plugin zip file from [WordPressplug-in「Advertising Manager」](https://wordpress.org/plugins/advertising-manager/).
 - Upload the zip file on the “wp-contents/plugins” directory “wp-contents/plugins” which is installed via Wordpress
@@ -103,7 +103,7 @@ Ex) After installation, many templates are shown on feed list at the initial sta
 	advman_ad('ADVS_index');													// ←Add this code.
 ```
 
-![テンプレートの編集](Install_SDK_Guide_Images/en/tempate2.png)
+![テンプレートの編集](Install_SDK_Guide_Images/en/template2.png)
 
 
 <a name="setup2"></a>
