@@ -26,7 +26,7 @@ WordPress にプラグインを用いてインフィード広告を導入する�
 - WordPress管理画面の「プラグイン＞新規追加」で「advertising-manager」を検索する
 - Scott Switzer作の「Advertising Manager」を「いますぐインストール」でインストールする
 
-![インストール方法その1](Install_SDK_Guide_Images/install1.png)
+![インストール方法その1](Install_SDK_Guide_Images/ja/install1.png)
 
 ### プラグインのZIPファイルを指定してインストールする方法
 
@@ -34,7 +34,7 @@ WordPress にプラグインを用いてインフィード広告を導入する�
 - WordPress管理画面の「プラグイン＞新規追加」で「プラグインのアップロード」を選択する
 - プラグインのZIPファイルを指定して「いますぐインストール」でインストールする
 
-![インストール方法その2](Install_SDK_Guide_Images/install2.png)
+![インストール方法その2](Install_SDK_Guide_Images/ja/install2.png)
 
 ### サーバに直接アップする方法
 
@@ -42,7 +42,7 @@ WordPress にプラグインを用いてインフィード広告を導入する�
 - ZIPファイルを WordPressがインストールされているディレクトリの `wp-contents/plugins`ディレクトリにアップする
 - ZIPファイルを解凍する
 
-![インストール方法その3](Install_SDK_Guide_Images/install3.png)
+![インストール方法その3](Install_SDK_Guide_Images/ja/install3.png)
 
 
 <a name="install2"></a>
@@ -50,7 +50,7 @@ WordPress にプラグインを用いてインフィード広告を導入する�
 
 WordPress管理画面の「プラグイン＞インストール済みプラグイン」で「宣伝マネージャ」(Advertising Manager)を「有効」にしてください。
 
-![有効化](Install_SDK_Guide_Images/activate.png)
+![有効化](Install_SDK_Guide_Images/ja/activate.png)
 
 
 <a name="setup"></a>
@@ -67,7 +67,7 @@ WordPress管理画面の「プラグイン＞インストール済みプラグ�
 - 検索結果テンプレート (``search.php``)
 - アーカイブテンプレート (``archive.php``)
 
-![テンプレート](Install_SDK_Guide_Images/template1.png)
+![テンプレート](Install_SDK_Guide_Images/ja/template1.png)
 
 
 <a name="setup1-1"></a>
@@ -103,7 +103,7 @@ WordPress管理画面の「プラグイン＞インストール済みプラグ�
 	advman_ad('ADVS_index');													// ←この行を追加
 ```
 
-![テンプレートの編集](Install_SDK_Guide_Images/template2.png)
+![テンプレートの編集](Install_SDK_Guide_Images/ja/template2.png)
 
 
 <a name="setup2"></a>
@@ -145,11 +145,11 @@ WordPress管理画面の「広告＞新規作成」で、下記のコードを�
 <script>MTBADVS.InStream.Default.run();</script>
 ```
 
-![広告設定1](Install_SDK_Guide_Images/ad_setup1.png)
+![広告設定1](Install_SDK_Guide_Images/ja/ad_setup1.png)
 
 - `ここに先ほど準備した広告テンプレートを貼り付けてください` 部分に、さきほど準備いただいた広告テンプレートを貼り付けてください。また広告を表示する際の文字数などは、この時点での設定が必要です。詳しくは [こちら](https://github.com/mtburn/MTBurn-JavaScript-SDK-Install-Guide/blob/master/Programming_Guide.md#user-content-%E5%BA%83%E5%91%8A%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E8%AA%AC%E6%98%8E%E6%96%87%E3%81%AE%E7%9F%AD%E7%B8%AE) を参照ください。
 - `広告枠ID` の部分には、管理画面で発行した広告枠 ID を入力してください。
-![広告枠ID](Install_SDK_Guide_Images/adspot_id.png)
+![広告枠ID](Install_SDK_Guide_Images/ja/adspot_id.png)
 
 インポート後、「HTML広告の設定を編集」画面になります。
 
@@ -158,7 +158,7 @@ WordPress管理画面の「広告＞新規作成」で、下記のコードを�
 - 「アカウント詳細＞Max Ads Per Page」を「1」に変更してください
 - 「保存」を押して登録を完了してください
 
-![広告設定2](Install_SDK_Guide_Images/ad_setup2.png)
+![広告設定2](Install_SDK_Guide_Images/ja/ad_setup2.png)
 
 
 <a name="setup2-2"></a>
@@ -170,7 +170,7 @@ WordPress管理画面の「広告＞新規作成」で、下記のコードを�
 <div data-advs-adspot-id="広告枠ID" style="display:none"></div>
 ```
 
-![広告設定2](Install_SDK_Guide_Images/infeed1.png)
+![広告設定2](Install_SDK_Guide_Images/ja/infeed1.png)
 
 - `広告枠ID` の部分には、広告テンプレート用タグと同様の、管理画面で発行した広告枠 ID を入力してください。
 
@@ -181,7 +181,7 @@ WordPress管理画面の「広告＞新規作成」で、下記のコードを�
   - `<表示位置>` には整数を入れてください。設定した数値の次のフィードにインフィード広告が表示されます
 - 「保存」を押して登録を完了してください
 
-![広告設定2](Install_SDK_Guide_Images/infeed2.png)
+![広告設定2](Install_SDK_Guide_Images/ja/infeed2.png)
 
 同じフィード内にさらに広告を設置する場合は、[広告設置位置指定タグの設定](#setup2-2) を必要個数分実行してください。
 
