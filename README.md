@@ -5,5 +5,5 @@
 
 ## WordPress 導入手順
 
-[日本語](WordPress_Plugin.md)
+[日本語](WordPress_Plugin.md)  
 [英語 ( English )](WordPress_Plugin_English.md)
