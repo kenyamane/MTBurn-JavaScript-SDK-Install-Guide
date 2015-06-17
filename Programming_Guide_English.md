@@ -68,10 +68,14 @@ You draft ad template from admin UI. Assign a placeholder by coding `{{click_url
 Issue tags from admin UI. Insert tags like as below to place you want to show ad in a page.
 
 ```html
-<script type="text/javascript" src="http://js.mtburn.com/advs-instream.js"></script>
-<div data-advs-adspot-id="ad spot ID" style="display:none">
-<script type="text/javascript">MTBADVS.InStream.Default.run()</script>
-</div>
+<div data-advs-adspot-id="広告枠ID" style="display:none"></div>
+```
+
+Insert tag like as below to before `</body>` tag.
+
+```html
+<script src="http://js.mtburn.com/advs-instream.js"></script>
+<script type="text/javascript">MTBADVS.InStream.Default.run({immediately:true})</script>
 ```
 
 <a name="infeed/start"></a>
@@ -191,29 +195,11 @@ function onAdditionalFeedLoaded() {
 <a name="infeed/title_desc_length"></a>
 ## Reduction of ad title, explanation and advertiser’s name.
 
-You add extension to your ad, and you can reduce ad title, explanation and advertiser’s name in order to optimize for each media.
-
-This below is an example for description, which has up to 30 letters.
-
-```js
-MTBADVS.InStream.Default.run({
-   description_length: 30
-});
-```
-
-Latter part of text will be cut off in order to make the description within 30 letters, and ellipsesthree dots leader `...` will be automatically added at the end of sentence. Whole description will be adjusted to make the description within 30 letters including ellipsesthree dots leader.  
-
-These options below are capable to be assigned.
-
-| Name of option | Description | Example of setting | Example of operation result |
-|---|---|---|---|
-| title_length | Assign the maximum length of title | `5` | `This is title` -> `This...`|
-| description_length | Assign the maximum length of description | `10` | `This is description` -> `This is des...`|  
-| displayed_advertiser_length | Assign the maximum length of advertiser's name（The number less than 10 is disabled） | `11` | `Provided by test advertiser` -> `Provided b…`
+If you configured at admin UI, you can reduce ad title, explanation and advertiser’s name in order to optimize for each media. Please refer to the UI manual for details.
 
 ### Editing by callback functions
 
-Giving the callback functions allows you to adjust the length of the string in your optional manner. Callback functions will be called right before displaying ads. The content of ads and location will be given as an argument. At this point, you can describe the process to edit the content. And also, you can edit the number of characters of item according to the position. Callback functions should be given to `before_render` option.  
+Giving the callback functions allows you to adjust the length of the string in your optional manner. Callback functions will be called right before displaying ads. The content of ads and location will be given as an argument. At this point, you can describe the process to edit the content. And also, you can edit the number of characters of item according to the position. Callback functions should be given to `before_render` option. This `before_render` option overwrites length configurations of admin UI.
 
 The following, place `[PR]` at the head of title. The number of characters of ad spots A should be within 30, and ad spots B should be within 40 including ellipses at the end of sentence.
 
