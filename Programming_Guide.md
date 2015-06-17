@@ -70,10 +70,14 @@
 管理 UI からタグを発行します。以下の様なタグが発行されるので、ページ内の広告を表示させたい位置に挿入します。
 
 ```html
-<script type="text/javascript" src="http://js.mtburn.com/advs-instream.js"></script>
-<div data-advs-adspot-id="広告枠ID" style="display:none">
-<script type="text/javascript">MTBADVS.InStream.Default.run()</script>
-</div>
+<div data-advs-adspot-id="広告枠ID" style="display:none"></div>
+```
+
+body 閉じタグ直前に挿入します。
+
+```html
+<script src="http://js.mtburn.com/advs-instream.js"></script>
+<script type="text/javascript">MTBADVS.InStream.Default.run({immediately:true})</script>
 ```
 
 <a name="infeed/start"></a>
@@ -191,29 +195,11 @@ function onAdditionalFeedLoaded() {
 <a name="infeed/title_desc_length"></a>
 ## 広告タイトル・説明文・表記広告主名の短縮
 
-広告呼び出し時にオプションを追加することで、広告のタイトルや説明文のテキスト、表記広告主名を媒体様のサイトに合わせて短縮させることができます。
-
-以下は説明文の長さを最大 30 文字にする例です。
-
-```javascript
-MTBADVS.InStream.Default.run({
-    description_length: 30
-});
-```
-
-説明文が30文字に収まるように、文の後半が切り取られます。また文末には三点リーダー `…` が自動的に付け加えられます。三点リーダーを含めた全体の長さが30文字になるよう調整されます。
-
-指定できるオプションは以下です。
-
-オプション名 | 説明 | 設定例 | 動作結果の例
---- | --- | --- | ---
-title_length | タイトルの最大長を指定します | `5` | `テストタイトル` -> `テストタ…`
-description_length | 説明文の最大長を指定します | `10` | `これはテスト説明文です` -> `これはテスト説明文…`
-displayed_advertiser_length | 表記広告主名の最大長を指定します（10 以下は無効です） | `11` | `株式会社テスト広告主提供` -> `株式会社テスト広告主…`
+管理画面から設定することで、広告のタイトルや説明文のテキスト、表記広告主名を媒体様のサイトに合わせて短縮させることができます。詳しくは管理画面のご利用マニュアルを参照してください。
 
 ### コールバック関数による編集
 
-またコールバック関数を渡すことで、媒体様の任意の方法で文字長の調整が可能です。コールバック関数は広告表示の直前に呼び出されます。引数として案件情報と設置箇所が渡されます。よって案件情報を任意に編集する処理を記述できます。また設置箇所に応じて、案件の文字数などを変動させることも可能です。コールバック関数は `before_render` オプションに渡します。
+コールバック関数を渡すことで、媒体様の任意の方法で文字長の調整が可能です。コールバック関数は広告表示の直前に呼び出されます。引数として案件情報と設置箇所が渡されます。よって案件情報を任意に編集する処理を記述できます。また設置箇所に応じて、案件の文字数などを変動させることも可能です。コールバック関数は `before_render` オプションに渡します。管理画面上で長さの設定をしている場合でも、`before_render` が優先されます。
 
 以下は、タイトルの先頭に `[PR]` という文字列を入れる。かつ、説明文を広告枠Aでは30文字、広告枠Bでは40文字に短縮し末尾に三点リーダーを付け加える例です。
 
