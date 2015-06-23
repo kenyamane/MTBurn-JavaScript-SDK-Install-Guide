@@ -1,4 +1,4 @@
-## AppDavis JavaScript SDK Programming Guide
+## Hike JavaScript SDK Programming Guide
 
 [日本語](Programming_Guide.md)  
 [英語（ English ）](Programming_Guide_English.md)
