@@ -24,6 +24,7 @@
 - [For Using DFP (DoubleClick for Publisher)](#dfp)
   - [In case of nonsynchronous tags](#dfp/async_tag)
   - [In case of synchronized tags](#dfp/sync_tag)
+  - [Using template from Admin UI](#dfp/web_template)
 - [Name space](#namespace)
 - [Q&A](#qa)
     - [What is meaning of `Instream` in codes?`](#qa/instream)
@@ -399,6 +400,7 @@ Insert tags you used, because how to implemented tags are different; whether tag
  - Insert JavaScript tags, ads unit template and, empty element that assigns display placement of ads.
  - In addition, it needs to insert CSS for display.
  - Insert click macro of DFP. Insert it accurately, and then it is possible to measure screen transitions and the clicks.
+ - You must implement template to tags if you using DFP click macro.
 
 ```html
 <!--  About reading CSS. It needs to customize. -->
@@ -455,6 +457,7 @@ It needs to read a CSS additionally because of displaying ads in iframe.
 - Insert JavaScript of M.T.Burn as creative.
  - Insert JavaScript such as advertisement unit template, empty element that assigns display placement of advertisement.
  - Insert click macro of DFP. Insert it accurately, and then it is possible to measure screen transitions and clicks.
+ - You must implement template to tags if you using DFP click macro.
 
 ```html
 <!-- Template of ads units. -->
@@ -500,6 +503,18 @@ MTBADVS.InStream.Default.run({
 ```
 
 If you use synchronized tags, it doesn’t need to call for style sheets.
+
+<a name="dfp/web_tempalte"></a>
+## Using template from Admin UI
+
+If you use template which draft from Admin UI, dfp click macro would not work correctly. You should use this only if you does not need to measure clicks by DFP.
+
+In this case, the lines below must be removed.
+
+```js
+// You must implement this step in order to connect DFP macro.
+ad_info.click_url = encodeURIComponent(ad_info.click_url);
+```
 
 <a name="namespace"></a>
 # Name space
