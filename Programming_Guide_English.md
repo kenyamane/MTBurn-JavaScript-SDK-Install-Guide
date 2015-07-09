@@ -504,7 +504,7 @@ MTBADVS.InStream.Default.run({
 
 If you use synchronized tags, it doesn’t need to call for style sheets.
 
-<a name="dfp/web_tempalte"></a>
+<a name="dfp/web_template"></a>
 ## Using template from Admin UI
 
 If you use template which draft from Admin UI, dfp click macro would not work correctly. You should use this only if you does not need to measure clicks by DFP.
