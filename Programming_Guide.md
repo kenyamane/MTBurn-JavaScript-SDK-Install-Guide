@@ -512,8 +512,6 @@ MTBADVS.InStream.Default.run({
 ad_info.click_url = encodeURIComponent(ad_info.click_url);
 ```
 
-通常と同様の、以下のようなタグで問題ありません。
-
 <a name="namespace"></a>
 # 名前空間
 
