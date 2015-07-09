@@ -26,6 +26,7 @@
 - [DFP連携](#dfp)
   - [非同期タグの場合](#dfp/async_tag)
   - [同期タグの場合](#dfp/sync_tag)
+  - [広告テンプレートの管理 UI 入稿](#dfp/web_template)
 - [名前空間](#namespace)
 - [よくある質問](#qa)
     - [コード中にあるInstreamはどういう意味ですか](#qa/instream)
