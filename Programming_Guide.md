@@ -387,6 +387,7 @@ ad_controller.loadAds(on_ad_loaded);
 | main_image_url | バナー型の矩形画像の URL | `http://banner.dspcdn.com/...` |
 | ad_id | 広告案件の ID | `123` |
 | displayed_advertiser | 表記広告主名 | `テスト広告主提供` |
+| public_relations | PR表記 | `PR` |
 
 <a name="dfp"></a>
 # DFP連携
