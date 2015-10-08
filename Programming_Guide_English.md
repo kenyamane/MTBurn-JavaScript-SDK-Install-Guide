@@ -249,7 +249,7 @@ MTBADVS.InStream.Default.run({
 
 The option is disabled if not specified.
 
-If `immediately` option is enabled, the ad loading and rendering process is executed immediately after `MTBADVS.InStream.Default.run()` function is called. For this reason, an ad call script must be inserted after the definition of ad template unit and elements of ad display position. And perhaps, also for this reason, other scripts may affect the M.T.Burn ad display.
+If `immediately` option is enabled, the ad loading and rendering process is executed immediately after `MTBADVS.InStream.Default.run()` function is called. For this reason, an ad call script must be inserted after the definition of ad template unit and elements of ad display position. And perhaps, also for this reason, other scripts may affect the M.T.Burn (Hike) ad display.
 
 If `immediately` option is disabled, the ad loading and rendering process is executed after the page load is finished. In this way, the ads may be displayed correctly in most cases but it should take longer time to display.
 
@@ -396,7 +396,7 @@ Insert tags you used, because how to implemented tags are different; whether tag
 ## In case of nonsynchronous tags
 
 - Add creatives to the order you want, and set the type of creatives `third party`.
-- Insert M.T.Burn JavaScript Tag as Creative.
+- Insert M.T.Burn (Hike) JavaScript Tag as Creative.
  - Insert JavaScript tags, ads unit template and, empty element that assigns display placement of ads.
  - In addition, it needs to insert CSS for display.
  - Insert click macro of DFP. Insert it accurately, and then it is possible to measure screen transitions and the clicks.
@@ -410,7 +410,7 @@ Insert tags you used, because how to implemented tags are different; whether tag
 <script type="text/advs-instream-template" data-adspot-id="NzYzOjEyMg">
   <div class="article">
     <div class="icon">
-    // Insert click macro of DFP, and then write down click URL of M.T.Burn just beneath of click macro of DFP.
+    // Insert click macro of DFP, and then write down click URL of M.T.Burn (Hike) just beneath of click macro of DFP.
       <a href="%%CLICK_URL_UNESC%%{{click_url}}" target="_blank">
         <img src="{{icon_image_url}}" />
       </a>
@@ -454,7 +454,7 @@ It needs to read a CSS additionally because of displaying ads in iframe.
 ## In case of synchronized tags
 
 - Add creatives to the order you want, and set the type of creatives `Tthird party`.
-- Insert JavaScript of M.T.Burn as creative.
+- Insert JavaScript of M.T.Burn (Hike) as creative.
  - Insert JavaScript such as advertisement unit template, empty element that assigns display placement of advertisement.
  - Insert click macro of DFP. Insert it accurately, and then it is possible to measure screen transitions and clicks.
  - You must implement template to tags if you using DFP click macro.
@@ -464,7 +464,7 @@ It needs to read a CSS additionally because of displaying ads in iframe.
 <script type="text/advs-instream-template" data-adspot-id="NzYzOjEyMg">
 <div class="article">
   <div class="icon">
-    <!-- Insert click macro of DFP, then put click URL of “M.T.Burn” right after -->
+    <!-- Insert click macro of DFP, then put click URL of “M.T.Burn (Hike) ” right after -->
     <a href="%%CLICK_URL_UNESC%%{{click_url}}" target="_blank">
       <img src="{{icon_image_url}}" />
     </a>
