@@ -290,6 +290,7 @@ It is better to show superior ads at the top.
 | main_image_url | URL of banner style rectangular picture | `http://banner.dspcdn.com/…` |
 | ad_id | ID of ads content | `123` |
 | displayed_advertiser | Name of advertiser | `Provided by test advertiser` |
+| optout | URL of optout | `http://mtburn.jp/privacy_policyopt_out/` |
 
 <a name="dfp"></a>
 # For Using DFP (DoubleClick for Publisher)
