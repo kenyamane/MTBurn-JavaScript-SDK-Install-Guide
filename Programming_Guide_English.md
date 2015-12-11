@@ -3,11 +3,6 @@
     - [Registration ad spot](#infeed/simple/adspot)
     - [Draft ad template](#infeed/simple/template)
     - [Issuance ad tags](#infeed/simple/tag)
-  - [Implementation template to tags](#infeed/start)
-    - [Registration of Establishment of ad spots](#infeed/start/adspot)
-    - [Template of ads unit](#infeed/start/template)
-    - [Designation of the ads insert position](#infeed/start/position)
-    - [Loading ads](#infeed/start/load)
   - [Additional load of ads](#infeed/additional_load)
   - [Shortening of the title of ads and description](#infeed/title_desc_length)
   - [Display ads faster](#infeed/immediately_option)
@@ -57,7 +52,7 @@ You draft ad template from admin UI. Assign a placeholder by coding `{{click_url
 
   <div class="contents">
     <h3>{{title}}</h3>
-    <p>【PR】{{description}}</p>
+    <p><a href="{{optout}}">【PR】</a>{{description}}</p>
     <span class="source">{{displayed_advertiser}}</span>
   </div>
 </div>
@@ -77,96 +72,6 @@ Insert tag like as below to before `</body>` tag.
 ```html
 <script src="http://js.mtburn.com/advs-instream.js"></script>
 <script type="text/javascript">MTBADVS.InStream.Default.run({immediately:true})</script>
-```
-
-<a name="infeed/start"></a>
-## Implementation templates to tags
-
-Code ad templates in tags, and you don’t need to draft them from admin UI. If you do so, implementation will be complex but you can implement more flexible.
-
-- Code template of ad unit into `head` tags.
-- Name URLs of creative materials and the place inserted ad texts in placeholder.
-- About implementation of In-Feed-Ads, you need to write `{{displayed_advertiser}}`means this spot is an ad one next to ad spot. (in case advertisers don’t assign anything, the word “Sponsored” is showed there. )
-
-```html
-<script type="text/advs-instream-template" data-adspot-id="MjQzOjIw">
-<div class="article">
- <div class="icon">
-   <a href="{{click_url}}">
-     <img src="{{main_image_url}}" />
-   </a>
- </div>
-
- <div class="contents">
-   <h3>{{title}}</h3>
-   <p>【PR】{{description}}</p>
-   <span class="source">{{displayed_advertiser}}</span>
- </div>
-</div>
-</script>
-```
-
-- Create appropriate empty element on ads display position. 
-Assign the ad spot ID advancely given by `data-advs-adspot-id` element. 
-This element will be replaced with DOM of ads.
-
-```html
-<div data-advs-adspot-id="MjQzOjIw" style="display:none"></div>
-```
-
-- Call for script for ads.
-
-```html
-<script src="http://js.mtburn.com/advs-instream.js"></script>
-<script>
-MTBADVS.InStream.Default.run();
-</script>
-```
-
-<a name="infeed/start/adspot"></a>
-### Registration of Establishment of ad spots
-
-Register ad spots in advance. 
-ad spots ID will be given by setting information below.
-
-- Name of ad spots
-- Size of ads image
-- The number of ads
-- Site URL (Store URL for application)
-
-Register ad spots for each displayed format.
-
-**Please kindly contact us for Ad Spots Setup & Settings due to our UI preparation at the moment, however it should be available very soon. Apologies for any inconvenience caused.**
-
-<a name="infeed/start/template"></a>
-### Template of ads unit
-
-Describe the DOM structure of ads unit on template. Assign the insert position of ads at placeholder.
-Describe placeholder using notation `{{parameter_name}}`
-
-About available parameters, please refer to [here](#infeed/parameter)
-
-<a name="infeed/start/position"></a>
-### Designation of the ads insert position
-
-Create appropriate empty element at ads insert position. Assign the ad spot ID given by `data-advs-adspot-id` element. This element will be replaced with the content of ads when loaded.
-
-Assign `display:none` style as element in order not to affect the website display in case of loading failure.
-
-```html
-<div data-advs-adspot-id="MjQzOjIw" style="display:none"></div>
-```
-
-<a name="infeed/start/load"></a>
-### Loading ads
-
-Call for JavaScript code of SDK for loading and processing. Acquire and display ads contentcases after the load of display is completed.
-
-```html
-<script src="http://js.mtburn.com/advs-instream.js"></script>
-<script>
-MTBADVS.InStream.Default.run();
-</script>
 ```
 
 <a name="infeed/additional_load"></a>
@@ -306,7 +211,8 @@ A response value of `getLoadedAds()` is as below.
     "main_image_url": "http://...",
     "icon_image_url": "http://...",
     "ad_id": 123,
-    "displayed_advertiser": "Provided by test advertiser"
+    "displayed_advertiser": "Provided by test advertiser",
+    "optout": "http://..."
   },
   ...
 ]
@@ -385,6 +291,7 @@ It is better to show superior ads at the top.
 | main_image_url | URL of banner style rectangular picture | `http://banner.dspcdn.com/…` |
 | ad_id | ID of ads content | `123` |
 | displayed_advertiser | Name of advertiser | `Provided by test advertiser` |
+| optout | URL of optout | `http://mtburn.jp/privacy_policyopt_out/` |
 
 <a name="dfp"></a>
 # For Using DFP (DoubleClick for Publisher)
