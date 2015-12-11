@@ -215,7 +215,8 @@ var ads = ad_controller.getLoadedAds();
         "main_image_url": "http://...",
         "icon_image_url": "http://...",
         "ad_id": 123,
-        "displayed_advertiser": "テスト広告主提供"
+        "displayed_advertiser": "テスト広告主提供",
+        "optout": "http://..."
     },
     ...
 ]

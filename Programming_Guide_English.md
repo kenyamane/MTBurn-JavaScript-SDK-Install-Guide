@@ -211,7 +211,8 @@ A response value of `getLoadedAds()` is as below.
     "main_image_url": "http://...",
     "icon_image_url": "http://...",
     "ad_id": 123,
-    "displayed_advertiser": "Provided by test advertiser"
+    "displayed_advertiser": "Provided by test advertiser",
+    "optout": "http://..."
   },
   ...
 ]
