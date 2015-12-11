@@ -52,7 +52,7 @@ You draft ad template from admin UI. Assign a placeholder by coding `{{click_url
 
   <div class="contents">
     <h3>{{title}}</h3>
-    <p>【PR】{{description}}</p>
+    <p><a href="{{optout}}">【PR】</a>{{description}}</p>
     <span class="source">{{displayed_advertiser}}</span>
   </div>
 </div>
