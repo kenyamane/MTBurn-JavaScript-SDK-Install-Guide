@@ -64,7 +64,7 @@ You draft ad template from admin UI. Assign a placeholder by coding `{{click_url
 Issue tags from admin UI. Insert tags like as below to place you want to show ad in a page.
 
 ```html
-<div data-advs-adspot-id="Ad Spot ID" style="display:none"></div>
+<div data-advs-adspot-id="Adspot ID" style="display:none"></div>
 ```
 
 Insert tag like as below to before `</body>` tag.
