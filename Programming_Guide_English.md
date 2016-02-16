@@ -52,7 +52,7 @@ You draft ad template from admin UI. Assign a placeholder by coding `{{click_url
 
   <div class="contents">
     <h3>{{title}}</h3>
-    <p><span {{optout_click}}>【PR】</span>{{description}}</p>
+    <p><a href="{{optout}}">【PR】</a>{{description}}</p>
     <span class="source">{{displayed_advertiser}}</span>
   </div>
 </div>
@@ -64,7 +64,7 @@ You draft ad template from admin UI. Assign a placeholder by coding `{{click_url
 Issue tags from admin UI. Insert tags like as below to place you want to show ad in a page.
 
 ```html
-<div data-advs-adspot-id="Adspot ID" style="display:none"></div>
+<div data-advs-adspot-id="広告枠ID" style="display:none"></div>
 ```
 
 Insert tag like as below to before `</body>` tag.
@@ -212,8 +212,7 @@ A response value of `getLoadedAds()` is as below.
     "icon_image_url": "http://...",
     "ad_id": 123,
     "displayed_advertiser": "Provided by test advertiser",
-    "optout": "http://...",
-    "optout_click": " onClick=..."
+    "optout": "http://..."
   },
   ...
 ]
@@ -293,7 +292,6 @@ It is better to show superior ads at the top.
 | ad_id | ID of ads content | `123` |
 | displayed_advertiser | Name of advertiser | `Provided by test advertiser` |
 | optout | URL of optout | `http://mtburn.jp/privacy_policyopt_out/` |
-| optout_click | script forwarding to optout URL | ` onClick="function(e){...` |
 
 <a name="dfp"></a>
 # For Using DFP (DoubleClick for Publisher)
