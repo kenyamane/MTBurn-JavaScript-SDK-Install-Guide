@@ -54,7 +54,7 @@
 
   <div class="contents">
     <h3>{{title}}</h3>
-    <p><span {{optout_click}}>【PR】</span>{{description}}</p>
+    <p><a href="{{optout}}">【PR】</a>{{description}}</p>
     <span class="source">{{displayed_advertiser}}</span>
   </div>
 </div>
@@ -216,8 +216,7 @@ var ads = ad_controller.getLoadedAds();
         "icon_image_url": "http://...",
         "ad_id": 123,
         "displayed_advertiser": "テスト広告主提供",
-        "optout": "http://...",
-        "optout_click": " onClick=..."
+        "optout": "http://..."
     },
     ...
 ]
@@ -295,7 +294,6 @@ ad_controller.loadAds(on_ad_loaded);
 | ad_id | 広告案件の ID | `123` |
 | displayed_advertiser | 表記広告主名 | `テスト広告主提供` |
 | optout | オプトアウトページへのURL | `http://mtburn.jp/privacy_policyopt_out/` |
-| optout_click | オプトアウトページへの遷移スクリプト | ` onClick="function(e){...` |
 
 <a name="dfp"></a>
 # DFP連携
