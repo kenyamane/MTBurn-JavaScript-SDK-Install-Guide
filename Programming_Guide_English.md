@@ -6,6 +6,7 @@
   - [Additional load of ads](#infeed/additional_load)
   - [Shortening of the title of ads and description](#infeed/title_desc_length)
   - [Display ads faster](#infeed/immediately_option)
+  - [Load script asynchronously](#infeed/script_defer)
   - [Customized implementation](#infeed/custom)
     - [Create an instance](#infeed/custom/instance)
     - [Sending ads request](#infeed/custom/load)
@@ -157,6 +158,19 @@ The option is disabled if not specified.
 If `immediately` option is enabled, the ad loading and rendering process is executed immediately after `MTBADVS.InStream.Default.run()` function is called. For this reason, an ad call script must be inserted after the definition of ad template unit and elements of ad display position. And perhaps, also for this reason, other scripts may affect the M.T.Burn (Hike) ad display.
 
 If `immediately` option is disabled, the ad loading and rendering process is executed after the page load is finished. In this way, the ads may be displayed correctly in most cases but it should take longer time to display.
+
+<a name="infeed/script_defer"></a>
+## Load script asynchronously
+
+If you prefer to load ad script asynchronously, set tha ad-tag as below:
+
+```html
+<script src="http://js.mtburn.com/advs-instream.js" defer></script>
+<script type="text/javascript">MTBADVS.InStream.Default.run()</script>
+```
+
+- Add `defer` argument to `<script>` element.
+- Remove `immediately` option from `MTVADVS.InStream.Default.run` method.
 
 <a name="infeed/custom"></a>
 ## Customized implementation
