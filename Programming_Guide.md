@@ -8,7 +8,6 @@
   - [広告の追加ロード](#infeed/additional_load)
   - [広告タイトル・説明文の短縮](#infeed/title_desc_length)
   - [広告表示の高速化](#infeed/immediately_option)
-  - [スクリプトの非同期読み込み](#infeed/script_defer)
   - [カスタム実装](#infeed/custom)
     - [インスタンスの作成](#infeed/custom/instance)
     - [広告リクエストの送信](#infeed/custom/load)
@@ -162,21 +161,6 @@ MTBADVS.InStream.Default.run({
 `immediately` オプションが有効の場合、`MTBADVS.InStream.Default.run()` の呼び出し時に、即座に広告の読み込みと表示処理が開始されます。そのため、正しい順序で広告タグを貼る必要があります (広告テンプレートと広告挿入位置のタグの後に、広告呼び出しタグを設置する必要があります)。また M.T.Burn の広告が表示された後に動作する、媒体社様や外部の JavaScript の動作によって、表示が崩れる可能性があります。
 
 `immediately` オプションが無効の場合、`MTBADVS.InStream.Default.run()` の呼び出し後、ページの読み込みが完了した後に、広告の読み込みと表示処理が行われます。そのため表示の崩れは起きにくくなりますが、オプション有効時に比べて、広告が表示されるまでの時間が長くなります。
-
-<a name="infeed/script_defer"></a>
-## スクリプトの非同期読み込み
-
-広告用のスクリプトを非同期で読み込む場合は、以下のようにタグを変更して設置してください。
-
-```html
-<script src="http://js.mtburn.com/advs-instream.js" defer></script>
-<script type="text/javascript">MTBADVS.InStream.Default.run()</script>
-```
-
-- `script` タグに `defer` 属性を付ける
-- `MTBADVS.InStream.Default.run` の `immediately` オプションを外す
-
-この設置方法では、広告スクリプトを非同期で読み込み、ページのメインコンテンツの描画完了後に広告の表示処理を開始します。よってメインコンテンツへの影響を最小限にできます。一方でメインコンテンツの描画後に広告が挿入されることが起こりやすくなり、ページの表示に違和感が多くなる可能性があります。事前に表示テストを行うことを推奨します。
 
 <a name="infeed/custom"></a>
 ## カスタム実装
